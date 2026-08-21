@@ -1,0 +1,38 @@
+# Compiled binaries and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary
+*.test
+
+# Output files from test coverage and profiling
+*.out
+*.coverprofile
+coverage.*
+profile.cov
+
+# Go workspace files
+go.work
+go.work.sum
+
+# Dependency directories
+# Only uncomment vendor/ if you do not want to commit dependencies
+# vendor/
+
+# Environment files containing sensitive keys/passwords
+.env
+.env.*
+
+# Common Editor/IDE configuration folders
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+pokedexcli
