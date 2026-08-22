@@ -21,16 +21,6 @@ func cleanInput(text string) []string {
 	return words
 }
 
-func commandExit(c *config) error {
-	fmt.Print("Closing the Pokedex... Goodbye!")
-	os.Exit(0)
-	return nil
-}
-func commandHelp(c *config) error {
-	fmt.Println("Welcome to the Pokedex!\nUsage:\nhelp: Displays a help message\nexit: Exit the Pokedex")
-	return nil
-}
-
 func repl(c *config) {
 	scanner := bufio.NewScanner(os.Stdin)
 
@@ -50,6 +40,22 @@ func repl(c *config) {
 			fmt.Print("Unknown command")
 		}
 
+	}
+
+}
+
+func getCommands() map[string]cliCommands {
+	return map[string]cliCommands{
+		"exit": {
+			name:        "exit",
+			description: "Closing the Pokedex... Goodbye!",
+			callback:    commandExit,
+		},
+		"help": {
+			name:        "help",
+			description: "Welcome to the Pokedex!\nUsage:\nhelp: Displays a help message\nexit: Exit the Pokedex",
+			callback:    commandHelp,
+		},
 	}
 
 }
